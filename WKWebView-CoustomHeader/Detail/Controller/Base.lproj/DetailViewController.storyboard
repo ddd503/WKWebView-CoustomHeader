@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ILz-fR-XQD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="cWp-aS-uSo">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="p4k-MN-8XE" customClass="PageViewController" customModule="WKWebView_CoustomHeader" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="tjU-kq-3kx"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sU6-pI-13q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="143"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="DetailViewController" customModule="WKWebView_CoustomHeader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBf-jL-g7l">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UuY-rV-7La">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oBf-jL-g7l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G4g-nr-2BU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oBf-jL-g7l" secondAttribute="bottom" id="ag7-sj-9a5"/>
+                            <constraint firstItem="UuY-rV-7La" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iCK-9Z-XZd"/>
+                            <constraint firstItem="UuY-rV-7La" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kIZ-7n-q83"/>
+                            <constraint firstItem="oBf-jL-g7l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xh0-ji-T2H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oBf-jL-g7l" secondAttribute="trailing" id="zFu-XZ-AXb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nNZ-aj-3xq"/>
+                    <connections>
+                        <outlet property="baseView" destination="oBf-jL-g7l" id="Tz6-WM-wcx"/>
+                        <outlet property="indicator" destination="UuY-rV-7La" id="uWm-ah-YTF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1703" y="143"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RQL-jj-CuW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ILz-fR-XQD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eYR-aa-2ch">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="p4k-MN-8XE" kind="relationship" relationship="rootViewController" id="Nxg-1a-RQb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mlf-xE-icz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="280.80000000000001" y="142.57871064467767"/>
+        </scene>
+    </scenes>
+</document>

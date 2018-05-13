@@ -42,7 +42,6 @@ final class AccessPointList {
             let accessPoint = AccessPoint.init(title: self.titleList[i], url: self.urlList[i])
             list.append(accessPoint)
         }
-        
         return list
     }
 }

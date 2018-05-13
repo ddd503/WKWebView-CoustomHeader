@@ -18,7 +18,7 @@ extension AccessListProvider: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AccessPointCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: AccessPointCell.identifier, for: indexPath)
         cell.textLabel?.text = accessList[indexPath.row].title
         return cell
     }

@@ -20,6 +20,7 @@ protocol CustomWebViewDelegate: class {
     func didFail(webView: WKWebView,
                  navigation: WKNavigation!,
                  error: Error)
+//    func didWebViewScroll(scrollView: UIScrollView)
 }
 
 class CustomWebView: WKWebView {
@@ -41,7 +42,10 @@ class CustomWebView: WKWebView {
         self.navigationDelegate = self
         self.uiDelegate = self
         self.allowsBackForwardNavigationGestures = true
+        // 元々持っているから付与しなくてもデリゲートメソッドを使える
+//        self.scrollView.delegate = self
     }
+    
 }
 
 // MARK: - WKNavigationDelegate
@@ -98,3 +102,11 @@ extension CustomWebView: WKUIDelegate {
         return true
     }
 }
+
+// MARK: - UIScrollViewDelegate
+// 元々持っているため拡張してはいけない
+//extension CustomWebView: UIScrollViewDelegate {
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        self.delegate?.didWebViewScroll(scrollView: scrollView)
+//    }
+//}

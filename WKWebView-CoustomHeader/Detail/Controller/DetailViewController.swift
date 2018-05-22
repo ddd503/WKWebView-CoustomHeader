@@ -59,6 +59,7 @@ class DetailViewController: UIViewController {
     private func setupWebView() {
         self.webView = CustomWebView(frame: .zero, configuration: setupConfiguration())
         self.webView?.delegate = self
+        self.webView?.scrollView.delegate = self
         self.baseView.addSubview(self.webView ?? WKWebView())
         
         guard !self.accessURL.isEmpty else {
@@ -106,7 +107,20 @@ class DetailViewController: UIViewController {
     }
 }
 
+extension DetailViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // webコンテンツのはみ出しを防止
+        scrollView.contentSize.width = self.view.frame.size.width
+    }
+}
+
 extension DetailViewController: CustomWebViewDelegate {
+    
+//    func didWebViewScroll(scrollView: UIScrollView) {
+//        // webコンテンツのはみ出しを防止
+//        scrollView.contentSize.width = self.view.frame.size.width
+//    }
     
     func didStartProvisionalNavigation(webView: WKWebView, navigation: WKNavigation!) {
         print("読み込み開始")

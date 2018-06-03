@@ -50,6 +50,12 @@ class DetailViewController: UIViewController {
         self.setHeaderPosition()
     }
     
+    deinit {
+        self.webView?.delegate = nil
+        self.webView?.scrollView.delegate = nil
+        self.headerView?.delegate = nil
+    }
+    
     // MARK: - Setup
     private func setup() {
         self.setupWebView()

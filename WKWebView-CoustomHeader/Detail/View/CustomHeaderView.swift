@@ -15,7 +15,7 @@ protocol CustomHeaderViewDelegate: class {
     func back()
 }
 
-class CustomHeaderView: UIView {
+final class CustomHeaderView: UIView {
 
     @IBOutlet weak var blueView: UIView!
     @IBOutlet weak var cursorButton: UIButton!

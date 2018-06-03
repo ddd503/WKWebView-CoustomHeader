@@ -23,7 +23,7 @@ protocol CustomWebViewDelegate: class {
 //    func didWebViewScroll(scrollView: UIScrollView)
 }
 
-class CustomWebView: WKWebView {
+final class CustomWebView: WKWebView {
     
     // MARK: - Propaties
     var delegate: CustomWebViewDelegate?
@@ -35,6 +35,11 @@ class CustomWebView: WKWebView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    deinit {
+        self.navigationDelegate = nil
+        self.uiDelegate = nil
     }
     
     // MARK: - Setup
